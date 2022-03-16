@@ -6,12 +6,9 @@ const connect = function () {
     port: 50541 // PORT number here,
   });
 
-  conn.on("data", (data) => {
-    console.log(data)
-  });
-
   conn.on("connect", () => {
-    console.log("You have connected")
+    console.log("Successfully connected to game server")
+    conn.write("Name: PCP");
   });
 
   // interpret incoming data as text
